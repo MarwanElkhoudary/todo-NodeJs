@@ -20,14 +20,21 @@ exports.post = (req, res) => {
     if (data) {
         checkEmail(email, (errCheckEmail, resCheckEmail) => {
             if (errCheckEmail) {
-                res.render('signup', {
+                res.render('login', {
                     msg: 'Error'
                 });
             } else {
+                if(resCheckEmail.length === 0){
+                    res.render('login', {
+                        msg: 'Email or Password is Wrong',
+                        authenticated:false,
+                        css: 'style/login.css'
+                    });
+                }else{
                 bcrypt.compare(password, resCheckEmail[0].password, (compareError, compareResult) => {
                     if (compareResult === false) {
                         res.render('login', {
-                            msg: 'Password is Wrong',
+                            msg: 'Email or Password is Wrong',
                             authenticated:false,
                             css: 'style/login.css'
                         });
@@ -53,6 +60,7 @@ exports.post = (req, res) => {
                         })
                     }
                 })
+            }
             }
         })
     }

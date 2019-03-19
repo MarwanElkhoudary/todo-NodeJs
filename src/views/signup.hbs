@@ -24,14 +24,11 @@
       </div>
       
       <!--       terms -->
-      <div class="terms">
-      <input type="checkbox" id="signing" name="signing"> 
-<label for="signing"><p>i agree with <i>terms and conditions</i></p></label> 
-      </div>
+      {{#if msg}}
+       <p>{{ this.msg }}</p>
+      {{/if}}
       
-      
-
-    <button type="submit" class="submit">SIGN UP</button>
+      <button type="submit" class="submit">SIGN UP</button>
 
       <div class="login">
 <!--       Already a member -->
