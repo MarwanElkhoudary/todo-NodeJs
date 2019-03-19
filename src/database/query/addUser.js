@@ -8,7 +8,7 @@ const addUser = (obj, hash, cb)=>{
 
   dbConnection.query(sql, (err, result) => {
        if(err){
-         console.log('Error in adding new user', err);
+         cb(err)
        }else{
          cb(null, result)
        }

@@ -64,6 +64,10 @@ input[type]:focus {
     color: #FFF;
 }
 
+form p{
+  color: red;
+  font-size: 12pt;
+}
 
 .submit {
   background: transparent;

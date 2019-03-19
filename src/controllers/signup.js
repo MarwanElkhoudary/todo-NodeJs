@@ -34,10 +34,12 @@ exports.post = (req, res) => {
                 addUser(data, hash, (errAdd, user) => {
                     if (errAdd) {
                         res.render('signup', {
-                            msg: 'Error'
+                            title: 'Sign Up',
+                            authenticated:false,
+                            msg:'This email is already registered, please choose another one',
+                            css: 'style/signup.css'
                         });
                     } else {
-                        console.log('userddd', user.rows[0].id)
                         createCookie({
                             id: user.rows[0].id,
                             name: user.rows[0].fname
