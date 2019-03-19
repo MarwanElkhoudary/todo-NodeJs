@@ -1,0 +1,131 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+@mixin prefix($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+*, *:before, *:after {
+      -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+      margin: auto;
+
+}
+
+body {
+    background-color:white;
+    padding:0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+}
+
+section {
+    background-color: #E6E6FA;
+    padding: 30px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    max-width: 800px;
+    
+    &:nth-child(even) {
+        background-color: lighten(#D5DED9, 40%);   
+    }
+}
+
+h1{
+    text-align: center;
+    font-weight: 200;
+    font-size: 4em;
+    margin: 0 0 0.5em;
+    color: #649DAD;
+    margin-top: 50px;
+}
+h2 {
+    font-weight: 200;
+    font-size: 4em;
+    margin: 0 0 0.5em;
+    color: #649DAD;
+    margin-top: 10px;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+button {
+    border: 2px solid #99B2B7;
+    background-color: transparent;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.25em;
+    color: #99B2B7;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    float: right;
+    @include prefix(transition, all 0.3s);
+}
+
+button:hover{
+    background-color: #99B2B7;
+    color: #D5DED9;
+}
+
+button:focus{
+    background-color: #99B2B7;
+    color: #D5DED9;
+}
+
+input[type=submit]{
+    border: 2px solid #99B2B7;
+    background-color: transparent;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.25em;
+    color: #99B2B7;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    float: right;
+    width: 160px !important;
+    @include prefix(transition, all 0.3s);
+}
+
+
+input[type=submit]:hover{
+    background-color: #99B2B7;
+    color: #D5DED9;
+}
+
+input[type=submit]:focus{
+    background-color: #99B2B7;
+    color: #D5DED9;
+}
+
+
+label {
+    font-weight: bold;
+    
+    span {
+        margin-bottom: 5px;
+        display: block;
+        
+        strong {
+            color: #dd6666;
+        }
+    }
+}
+
+input {
+    padding: 20px;
+    width: 100%;
+    border: 1px solid #99B2B7; 
+    border-radius: 0;
+    font-size: 1em;
+
+    &.error {
+        border-color: #dd6666;
+    }
+}
+
