@@ -1,0 +1,44 @@
+<!-- card ui -->
+<div class="con">
+  <div class="card">
+    <div class="about">
+      <h1>Sign up</h1>
+<!--       <h2>oDsoky .<span>inc</span></h2> -->
+      <p>TO DO LIST</p>
+    </div>
+    <form autocomplete="on" action="/signup" method="POST">
+
+      <div class="inputs">
+<!--         <i class="fa fa-envelope-o" aria-hidden="true"></i> -->
+        <input type="text" name="fname" placeholder="First Name" required/>
+        <input type="text" name="lname" placeholder="Last Name"/>
+          
+        <input type="email" name="email" placeholder="Email" required/>
+        <input type="password" name="password" placeholder="Password" required/>
+
+        <input type="file" name="image" placeholder="Image" />
+        <input type="text" name="spec" placeholder="specification" />
+
+        <input type="text" name="hobbies" placeholder="Hobbies" />
+        <input type="text" name="abstract" placeholder="About Me" />
+      </div>
+      
+      <!--       terms -->
+      <div class="terms">
+      <input type="checkbox" id="signing" name="signing"> 
+<label for="signing"><p>i agree with <i>terms and conditions</i></p></label> 
+      </div>
+      
+      
+
+    <button type="submit" class="submit">SIGN UP</button>
+
+      <div class="login">
+<!--       Already a member -->
+      <label id="login" for="login"><p> Already a member! <a href="/login">Login</a>  </a></p></label> 
+        </div>
+      </form>
+    
+    
+    
+  </div></div>
