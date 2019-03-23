@@ -22,7 +22,7 @@ body {
 }
 
 section {
-    background-color: #E6E6FA;
+    background-color: #d2b6d19c;
     padding: 30px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -38,14 +38,14 @@ h1{
     font-weight: 200;
     font-size: 4em;
     margin: 0 0 0.5em;
-    color: #649DAD;
+    color: #1475ce;
     margin-top: 50px;
 }
 h2 {
     font-weight: 200;
     font-size: 4em;
     margin: 0 0 0.5em;
-    color: #649DAD;
+    color: #3e7888;
     margin-top: 10px;
 }
 
@@ -54,12 +54,12 @@ h2 {
 }
 
 button {
-    border: 2px solid #99B2B7;
+    border: 2px solid #833b80;
     background-color: transparent;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 1.25em;
-    color: #99B2B7;
+    color: #262326;
     margin-top: 20px;
     text-transform: uppercase;
     text-align: center;
@@ -68,22 +68,22 @@ button {
 }
 
 button:hover{
-    background-color: #99B2B7;
-    color: #D5DED9;
+    background-color: #af34aaa6;
+    color: #262326;
 }
 
 button:focus{
-    background-color: #99B2B7;
-    color: #D5DED9;
+    background-color: #af34aaa6;
+    color: #262326;
 }
 
 input[type=submit]{
-    border: 2px solid #99B2B7;
+    border: 2px solid #833b80;
     background-color: transparent;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 1.25em;
-    color: #99B2B7;
+    color: #262326;
     margin-top: 20px;
     text-transform: uppercase;
     text-align: center;
@@ -94,13 +94,13 @@ input[type=submit]{
 
 
 input[type=submit]:hover{
-    background-color: #99B2B7;
-    color: #D5DED9;
+    background-color: #af34aaa6;
+    color: #262326;
 }
 
 input[type=submit]:focus{
-    background-color: #99B2B7;
-    color: #D5DED9;
+    background-color: #af34aaa6;
+    color: #262326;
 }
 
 

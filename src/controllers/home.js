@@ -7,22 +7,21 @@ const deleteTask = require('../database/query/deleteTask')
 
 exports.get = (req, res) => {
     getTokenData(req.cookies.data, (err, result) => {
-        console.log('res.cookie.idfffff', result)
         getTask(result.id, (errGetTask, resGetTask) => {
             if (errGetTask) {
                 console.log('errGetTask', errGetTask)
             } else {
+                console.log('resGetTask', resGetTask)
                 res.render('home', {
                     title: 'To Do List',
                     css1: 'style/home.css',
                     name:result.name,
                     authenticated:true,
-                    resGetTask
+                    resGetTask,
+                    result,
                 });
-
             }
         })
-
     })
 }
 
@@ -68,10 +67,10 @@ exports.delete = (req, res) => {
     const id = req.params.id;
     deleteTask(id, (errDelete, resDelete) => {
         if (errDelete) {
+            console.log('delete')
             console.log('not delete', errDelete)
         } else {
             res.redirect('/')
-
         }
     })
 

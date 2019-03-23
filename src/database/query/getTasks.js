@@ -1,7 +1,6 @@
 const dbConnection = require('../dbConnection');
 
 const getTasks = (user_id, cb) => {
-    console.log('user_id', user_id)
     const sql = {
       text: 'SELECT * FROM tasks WHERE user_id=$1',
       values: [user_id],

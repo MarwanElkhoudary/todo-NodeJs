@@ -4,7 +4,8 @@ const handlebars = require('express-handlebars');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const favicon = require('serve-favicon');
-const controllers = require('../src/controllers/index')
+const controllers = require('../src/controllers/index');
+const upload = require('../src/controllers/multer');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(cookieParser());
 app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 
+app.use(upload.single('image'))
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -28,4 +30,4 @@ app.engine('hbs', handlebars({
 
 app.use(controllers);
 
-module.exports = app;
+module.exports ={ app, upload };

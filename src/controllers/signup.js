@@ -1,8 +1,18 @@
+// app.post('/create_blog', upload.single('image'), async (req, res) => {
+//     const result = await cloudinary.v2.uploader.upload(req.file.path);
+//     res.send(result)
+//   })
 const addUser = require('../database/query/addUser');
 const hashPassword = require('./authentication/hashPassword');
+const upload = require('./multer');
+const cloudinary = require('cloudinary');
+require('env2')('./config.env')
+require('./cloudinary');
+
 const {
     createCookie
-} = require('./authentication/authinticate')
+} = require('./authentication/authinticate');
+
 exports.get = (req, res) => {
     res.render('signup', {
         title: 'Sign Up',
@@ -11,7 +21,9 @@ exports.get = (req, res) => {
     });
 }
 
-exports.post = (req, res) => {
+exports.post =  async (req, res) => {
+    // console.log('req', req)
+    const result = await cloudinary.v2.uploader.upload(req.file.path);
     const data = req.body;
     const {
         fname,
@@ -25,13 +37,26 @@ exports.post = (req, res) => {
     } = data;
 
     if (data) {
+
         hashPassword(password, (err, hash) => {
             if (err) {
                 res.render('signup', {
-                    msg: 'Error'
+                    title: 'Sign Up',
+                    authenticated:false,
+                    msg:'Error',
+                    css: 'style/signup.css'
                 });
             } else {
-                addUser(data, hash, (errAdd, user) => {
+                cloudinary.v2.uploader.upload(req.file.path, (error, result) => {
+                 if(error){
+                    res.render('signup', {
+                        title: 'Sign Up',
+                        authenticated:false,
+                        msg:'Error in image size',
+                        css: 'style/signup.css'
+                    });
+                 }else{
+                addUser(data, hash,result.url, (errAdd, user) => {
                     if (errAdd) {
                         res.render('signup', {
                             title: 'Sign Up',
@@ -47,7 +72,6 @@ exports.post = (req, res) => {
                             if (errToken) {
                                 res.render('/login');
                             } else {
-                                console.log('token', token)
                                 res.setHeader(
                                     'Set-Cookie',
                                     `data=${token};httpOnly;Max-age=90000000`,
@@ -58,6 +82,8 @@ exports.post = (req, res) => {
 
                     }
                 })
+            }
+            })
             }
         })
     }
