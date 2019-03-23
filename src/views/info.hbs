@@ -1,0 +1,30 @@
+<div class="containerInfo">
+    {{#each resGetInfo}}
+    <div class="imageInfo">
+        <img src="{{this.image}}" alt="image" />
+    </div>
+
+    <div class="detailsInfo">
+        <h1>Personal Details</h1>
+
+        <div class="itemInfo">
+        <h5>User Name: </h5><h5>{{this.fname}} {{this.lname}}<h5>
+        </div>
+        <div class="itemInfo">
+        <h5>Email: </h5><h5>{{this.email}}<h5>
+        </div>
+        <div class="itemInfo">
+        <h5>Specification:</h5><h5>{{this.spec}}<h5>
+        </div>
+        <div class="itemInfo">
+        <h5>Hobbies:</h5><h5>{{this.hobbies}}<h5>
+        </div>
+        <div class="itemInfo">
+        <h5>Date of Registration:</h5><h5> {{this.reg_Date}}<h5>
+        </div>
+        <div class="itemInfo">
+        <h5>Abstract: </h5><p>{{this.abstract}}<p>
+        </div>
+    </div>
+   {{/each}}
+</div>

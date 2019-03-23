@@ -1,23 +1,21 @@
 <header class="main-header">
   <a href="/"><img src="img/todo.png" alt="logo"/></a>
   <nav>
-    {{!-- <ul>
-      <li>About</li>
-      <li>Sign up</li>
-      <li>login</li>
-    </ul> --}}
+  
 
                 {{#if authenticated}}
-                {{#if name}}
+                {{#if result}}
+                {{!-- {{#if id}} --}}
                 <li>
                     <b>HELLO:</b>&nbsp;
-                    <a class="username" href="/profile/{{user.id}}">{{name}}</a>
+            <a class="username" href="/info">{{result.name}}</a>
                 </li>
                
                 <li>
                     <a href="/logout">LOGOUT</a>
                 </li>
 
+                {{!-- {{/if}} --}}
                 {{/if}}
                 {{/if}}
 

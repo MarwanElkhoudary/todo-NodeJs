@@ -1,17 +1,16 @@
 const dbConnection = require('../dbConnection');
 
-const deleteUser = (id, cb) => {
+const getInfo = (id, cb) => {
     const sql = {
-      text: 'DELETE FROM tasks WHERE id=$1',
+      text: 'SELECT * FROM users WHERE id=$1',
       values: [id],
     };
     dbConnection.query(sql, (err, res) => {
       if (err) {
-          console.log('Error in deleting tasks', err);
-        cb(err);
+          console.log('Error in getting info from users table', err)
       } else {
         cb(null, res.rows);
       }
     });
   };
-  module.exports = deleteUser;
+  module.exports = getInfo;

@@ -3,7 +3,7 @@
 html { font-size: 62.5%; }
 
 body { 
-  margin: 0;
+  /* margin: 0; */
   font-size: 1.8rem;
   font-family: 'Avenir', Arial, sans-serif;
 }
@@ -93,8 +93,8 @@ footer p {
     font-size: 1.4rem;
     font-family: 'Avenir', Arial, sans-serif;
     margin-top: 16px;
+    text-align: center !important;
 }
 
 
 
-bg-dark text-light fixed-bottom text-center
